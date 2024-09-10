@@ -1,0 +1,6 @@
+#!/bin/bash  
+
+command -v brew >/dev/null 2>&1 || { echo "Homebrew not installed. Aborting."; exit 1; }
+brew list ollama >/dev/null 2>&1 || { echo "Ollama not installed. Aborting."; exit 1; }  
+screen -list | grep -q "chat_ollama_serve" || screen -dmS chat_ollama_serve "$(brew --prefix)/bin/ollama" serve  
+exec ollama run llama3
