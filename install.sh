@@ -1,3 +1,1 @@
-#!/bin/sh
-set -e
-brew install ollama
+exec brew install ollama
