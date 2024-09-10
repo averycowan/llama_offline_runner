@@ -1,4 +1,7 @@
-#!/bin/bash  
+#!/bin/bash
+
+[ "$1" = "-h" -o "$1" = "--help" ] && { echo "Usage: $0 [-s|--stop] [-h|--help]"; exit 0; }  
+[ "$1" = "-s" -o "$1" = "--stop" ] && { screen -X -S chat_ollama_serve quit; echo "Ollama server stopped."; exit 0; }
 
 command -v brew >/dev/null 2>&1 || { echo "Homebrew not installed. Aborting."; exit 1; }
 brew list ollama >/dev/null 2>&1 || { echo "Ollama not installed. Aborting."; exit 1; }  
