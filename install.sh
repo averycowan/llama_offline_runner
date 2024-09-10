@@ -1,1 +1,1 @@
-exec brew install ollama
+brew install ollama
